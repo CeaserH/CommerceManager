@@ -1,0 +1,52 @@
+<style>
+  button{
+    margin: 5px;
+  }
+</style>
+
+<h2>Edit a Product</h2>
+<form (submit)="updateProduct()">
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <p>Name:</p><div *ngIf="!name.valid"><p id="validName">Please enter a valid name.</p></div>
+            <input type="text" 
+              class="form-control" 
+              name="editProd.name" 
+              [(ngModel)]="editProd.name"
+              minlength="3"
+              maxlength="23"
+              #name="ngModel"
+              required>
+        </div>
+    </div>
+            <br>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <p>Quantity:</p><div *ngIf="!qty.valid"><p id="validQty">Please enter a valid quantity.</p></div>
+              <input type="number" 
+              class="form-control" 
+              name="editProd.qty" 
+              [(ngModel)]="editProd.qty"
+              minlength="1"
+              maxlength="10000"
+              #qty="ngModel"
+              required>
+        </div>
+    </div>
+            <br>
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <p>Price:</p><div *ngIf="!price.valid"><p id="validPrice">Please enter a valid price.</p></div>
+              <input type="text" 
+              class="form-control" 
+              name="editProd.price" 
+              [(ngModel)]="editProd.price"
+              minlength="1"
+              maxlength="10000"
+              #price="ngModel"
+              required>
+        </div>
+    </div>
+            <br>
+            <a [routerLink]="['/']"><button type="button" class="btn btn-dark">Back</button></a><input type="submit" value="Edit" class="btn btn-success">
+</form>

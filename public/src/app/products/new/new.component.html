@@ -1,0 +1,57 @@
+<style>
+        button{
+                margin: 5px;
+        }
+
+</style>
+<h2>Add a Product</h2>
+
+<form (submit)="addProd()">
+        <div class="form-row">
+                <div class="col-md-4 mb-3">
+                        <p>Name:</p><div *ngIf="!name.valid"><p id="validName">Please enter a valid name.</p></div>
+                        <input type="text" 
+                        class="form-control" 
+                        name="name" 
+                        [(ngModel)]="newProd.name" 
+                        placeholder="Toothbrushes"
+                        minlength="3"
+                        maxlength="23"
+                        #name="ngModel"
+                        required><br>
+                </div>
+        </div>
+        <div class="form-row">
+                <div class="col-md-4 mb-3">
+                        <p>Quantity:</p><div *ngIf="!qty.valid"><p id="validQty">Please enter a valid quantity.</p></div>
+                        <input type="number" 
+                        class="form-control" 
+                        name="qty" 
+                        [(ngModel)]="newProd.qty" 
+                        placeholder="0"
+                        minlenth="1"
+                        maxlength="10000"
+                        #qty="ngModel" 
+                        required><br>
+                </div>
+        </div>
+        <div class="form-row">
+                <div class="col-md-4 mb-3">
+                        <p>Price:</p><div *ngIf="!price.valid"><p id="validPrice">Please enter a valid price.</p></div>
+                        <input type="text" 
+                        class="form-control" 
+                        name="price" 
+                        [(ngModel)]="newProd.price" 
+                        placeholder="0"
+                        minlength="1"
+                        maxlength="10000"
+                        #price="ngModel" 
+                        required><br>
+                </div>
+        </div>
+                        <br>
+                        <a [routerLink]="['/']"><button type="button" class="btn btn-dark">Back</button></a>
+                        <input *ngIf="price.valid && name.valid && qty.valid" type="submit" class="btn btn-success" value="Add Product">
+                        <br>
+                        <br>
+</form>

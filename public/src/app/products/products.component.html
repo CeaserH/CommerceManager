@@ -1,0 +1,38 @@
+<style>
+    div.container{
+      border: 2px solid darkgray;
+      margin-bottom: 10px;
+    }
+    button{
+      margin: 5px;
+    }
+    
+</style>
+
+<div class="container">
+  <br>
+  <a [routerLink]="['new']"><button type="button" class="btn btn-dark">Add New Product</button></a><br>
+  <br>
+  <div class="content">
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Qty</th>
+          <th scope="col">Price</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <th scope="row">{{product._id}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.qty}}</td>
+          <td>${{product.price}}</td>
+          <td><a [routerLink]="['update', product._id]"><button type="button" class="btn btn-dark">Edit</button></a> <a [routerLink]="[product._id]"><button type="button" class="btn btn-dark">Details</button></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

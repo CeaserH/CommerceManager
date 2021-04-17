@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<style>
+  div.container{
+    border: 2px solid darkgray;
+    margin-top: 10px;
+  }
+  
+  </style>
+
+
+<div class="container">
+<h1>Commerce Manager</h1>
+
+
+<!-- <h1>Product List</h1>
+<a [routerLink]="['new']"><button>Add New Product</button></a> -->
+
+  
+<div class="content">
+
+<router-outlet></router-outlet>
+<!-- <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th scope="row">{{product._id}}</th>
+        <td>{{product.name}}</td>
+        <td>{{product.qty}}</td>
+        <td>${{product.price}}</td>
+        <td><button (click)=modProd(product)>Edit</button><button (click)=viewProd(product)>Details</button></td>
+      </tr>
+    </tbody>
+  </table> -->
+<!-- </div>
+  <div *ngIf="editProd" style="display:inline-block; vertical-align:top; width: 400px;">
+      <h1>Edit a Product</h1>
+      <div style="border:1px solid black; border-radius:10px; width:300px; padding:10px; margin:5px;">
+        <form (submit)="onEditSubmit()">
+          <label>Name :
+            <input type="text" name="editProd.name" [(ngModel)]="editProd.name">
+          </label>
+          <br>
+          <label>Quantity :
+            <input type="text" name="editProd.qty" [(ngModel)]="editProd.qty">
+          </label>
+          <br>
+          <label>Price :
+            <input type="text" name="editProd.price" [(ngModel)]="editProd.price">
+          </label>
+          <br>
+          <input type="submit" value="EDIT">
+        </form>
+      </div>
+    </div> -->
+
+    <!-- <div *ngIf="oneProd" style="display:inline-block; vertical-align:top; width: 400px;">
+        <h1>Product Details</h1>
+        <div style="border:1px solid black; border-radius:10px; width:300px; padding:10px; margin:5px;">
+          <form (submit)="ngOnInit()">
+            <label>Name :
+              {{ oneProd.name }}
+            </label>
+            <br>
+            <label>Quantity :
+              {{ oneProd.qty }}
+            </label>
+            <br>
+            <label>Price :
+              {{ oneProd.price }}
+            </label>
+            <br>
+            <input type="submit" value="Back"><button (click)="delProd(oneProd._id)">Delete</button>
+          </form>
+        </div>
+    </div>
+</div> -->
+
